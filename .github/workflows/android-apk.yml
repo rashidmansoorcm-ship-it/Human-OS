@@ -23,14 +23,14 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Install dependencies
         run: npm install
 
-      - name: Install Capacitor Android
-        run: npm install @capacitor/core @capacitor/android @capacitor/cli
+      - name: Install Capacitor 7
+        run: npm install @capacitor/core@7.4.3 @capacitor/android@7.4.3 @capacitor/cli@7.4.3
+
+      - name: Accept Android licenses
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
 
       - name: Build web application
         run: npm run build
