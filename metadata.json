@@ -1,0 +1,8 @@
+{
+  "name": "Human OS",
+  "description": "A private, device-first personal life operating system for daily remembrance, mind and body health, tasks, reflections, goals, finances, relationships, and writing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
