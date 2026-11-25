@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Malayalam", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --canvas: #f7f3ea;
+  --surface: #fffdf8;
+  --surface-subtle: #f1ebdd;
+  --ink: #1f2421;
+  --ink-muted: #5f6661;
+  --emerald: #0b5d48;
+  --emerald-deep: #073d30;
+  --emerald-soft: #e6f0ec;
+  --gold: #a68232;
+  --gold-soft: #f3ecda;
+  --line: #e4ddcc;
+  --danger: #b42318;
+  --warn: #a15c07;
+  color-scheme: light;
+}
+
+.dark {
+  --canvas: #101513;
+  --surface: #17201c;
+  --surface-subtle: #1d2823;
+  --ink: #ece8dc;
+  --ink-muted: #9aa39d;
+  --emerald: #3fb391;
+  --emerald-deep: #0b4a3a;
+  --emerald-soft: #133128;
+  --gold: #d1ad5a;
+  --gold-soft: #262217;
+  --line: #28342e;
+  --danger: #f97066;
+  --warn: #f5b942;
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  letter-spacing: 0.008em;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.prose-malayalam {
+  font-family: "Noto Sans Malayalam", "Plus Jakarta Sans", system-ui, sans-serif;
+  line-height: 1.85;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+input[type="range"] {
+  accent-color: var(--emerald);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
